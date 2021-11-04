@@ -13,7 +13,7 @@ const app = express();
 
 const corsOptions = {
     origin: process.env.CLIENT_URL,
-    credential: true,
+    credentials: true,
     'allowedHeaders': ['sessionId', 'Content-Type'],
     'exposedHeaders': ['sessionId'],
     'methods': 'GET,HEAD,PUT,PATCH,POST,DELETE',
