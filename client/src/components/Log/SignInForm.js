@@ -9,11 +9,10 @@ function SignInForm() {
         e.preventDefault();
         const emailError = document.querySelector('.email.error');
         const passwordError = document.querySelector('.password.error');
-
         axios({
             method: 'post',
             url: `${process.env.REACT_APP_API_URL}api/user/login`,
-           withcredentials: true,
+            withcredentials: true,
             data: {
                 email,
                 password,
@@ -29,7 +28,7 @@ function SignInForm() {
             })
             .catch((err) => {
                 console.log(err);
-            })  
+            })
     };
     return (
         <form id='sign-up-form' action='' onSubmit={handleLogin} >
@@ -44,6 +43,7 @@ function SignInForm() {
             <div className='email error'></div>
             <br />
             <label htmlFor="password">Mot de passe</label>
+            <br />
             <input type="password"
                 name="password"
                 id="password"
