@@ -14,7 +14,7 @@ function Log(props) {
             setSignUpModals(false);
             setSignInModals(true);
         }
-    }
+    };
 
     return (
         <div className='connection-form'>
