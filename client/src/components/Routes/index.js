@@ -3,10 +3,12 @@ import React from 'react'
 import Home from '../../Pages/Home'
 import Profil from '../../Pages/Profil'
 import Trending from '../../Pages/Trending'
+import Navbar from '../Navbar'
 
 function index() {
     return (
         <Router>
+            <Navbar />
             <Switch>
                 <Route path='/' exact component={Home}  />
                 <Route path='/profil' exact component={Profil}  />
