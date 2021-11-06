@@ -1,10 +1,12 @@
 import { useState } from "react";
+ import { useDispatch, useSelector } from "react-redux";
+import { uploadPicture } from "../../actions/user.actions";
 
 const UploadImg = () => {
-const [file, setFile] = useState();
+    const [file, setFile] = useState();
 
- const dispatch = useDispatch();
- const userData = useSelector((state) => state.userReducer);
+    const dispatch = useDispatch();
+    const userData = useSelector((state) => state.userReducer);
 
 
     const handlePicture = (e) => {
@@ -18,14 +20,14 @@ const [file, setFile] = useState();
     };
 
     return (
-       <form className="upload-pic" action="" onSubmit={handlePicture}>
-           <label htmlFor="file">Changer d'image</label>
-           <input type="file" id="file" accept=".jpeg, .jpg, .png"
-           onChange={(e) => setFile(e.target.files[0])}
-           />
-           <br />
-           <input type="submit" value="Envoyer" />
-       </form>
+        <form className="upload-pic" action="" onSubmit={handlePicture}>
+            <label htmlFor="file">Changer d'image</label>
+            <input type="file" id="file" accept=".jpeg, .jpg, .png"
+                onChange={(e) => setFile(e.target.files[0])}
+            />
+            <br />
+            <input type="submit" value="Envoyer" />
+        </form>
     )
 }
 

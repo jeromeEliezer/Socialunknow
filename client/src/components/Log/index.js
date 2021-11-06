@@ -31,6 +31,7 @@ function Log(props) {
                     >
                         Se connecter
                     </li>
+                
                 </ul>
                 {signUpModal && <SignUpForm />}
                 {signInModal && <SignInForm />}

@@ -19,7 +19,7 @@ const Logout = () => {
       window.location ="/";
     };
     return (
-        <li onClick={Logout}>
+        <li onClick={logout}>
             <img src='./img/icons/logout.svg' alt='logout'/>
         </li>
     );

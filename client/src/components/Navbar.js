@@ -6,6 +6,7 @@ import  Logout  from './Log/Logout';
 
 const Navbar = () => {
     const uid = useContext(UidContext);
+    
     const userData = useSelector((state) => state.userReducer)
     return (
         <nav>
@@ -20,6 +21,7 @@ const Navbar = () => {
                 </div>
                 {uid ? (
                     <ul>
+                        
                         <li></li>
                         <li className="welcome">
                             <NavLink exact to='/profil'>
@@ -33,7 +35,7 @@ const Navbar = () => {
                         <li></li>
                         <li>
                             <NavLink exact to='/profil'>
-                                <img src="./img/icons/login.svg" alt=''/>
+                                <img src="./img/icons/login.svg" alt='login'/>
                             </NavLink>
                         </li>
                     </ul>

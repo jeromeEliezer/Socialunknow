@@ -1,8 +1,9 @@
+import { LeftNav } from "../components/LeftNav"
 
 function Home() {
     return (
-        <div>
-            in de Home
+        <div className='home'>
+            <LeftNav />
         </div>
     )
 }
