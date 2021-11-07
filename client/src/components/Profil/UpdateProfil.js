@@ -74,7 +74,7 @@ function UpdateProfil() {
                                                 <img src={userData.picture} alt="user-pic" />
                                                 <h4>{userData.pseudo}</h4>
                                                 <div className="follow-handler">
-                                                    <FollowHandler idToFollow={user._id} />
+                                                    <FollowHandler idToFollow={user._id} type={'suggestion'}/>
                                                 </div>
                                             </li>
                                         );
@@ -102,7 +102,7 @@ function UpdateProfil() {
                                                 <img src={userData.picture} alt="user-pic" />
                                                 <h4>{userData.pseudo}</h4>
                                                 <div className="follow-handler">
-                                                    <FollowHandler idToFollow />
+                                                    <FollowHandler idToFollow={user._id} type={'suggestion'}/>
                                                 </div>
                                             </li>
                                         );
