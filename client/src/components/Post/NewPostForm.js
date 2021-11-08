@@ -15,7 +15,7 @@ const NewPostForm = () => {
     const error = useSelector((state) => state.errorReducer.postError)
     const dispatch = useDispatch();
 
-    const handlePicture = () => {
+    const handlePicture = (e) => {
         setPostPicture(URL.createObjectURL(e.target.files[0]));
         setFile(e.target.files[0]);
         setVideo('');

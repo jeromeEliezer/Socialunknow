@@ -20,13 +20,20 @@ const FollowHandler = ({ idToFollow, type }) => {
         setIsFollowed(false);
     };
 
+    // useEffect(() => {
+    //     if (isEmpty(userData.following)) {
+    //         if (userData.following.includes(idToFollow)) {
+    //             setIsFollowed(true)
+    //         } else setIsFollowed(false)
+    //     }
+    // }, [userData, idToFollow])
     useEffect(() => {
-        if (isEmpty(userData.following)) {
-            if (userData.following.includes(idToFollow)) {
-                setIsFollowed(true)
-            } else setIsFollowed(false)
+        if (!isEmpty(userData.following)) {
+          if (userData.following.includes(idToFollow)) {
+            setIsFollowed(true);
+          } else setIsFollowed(false);
         }
-    }, [userData, idToFollow])
+      }, [userData, idToFollow]);
 
     return (
         <>

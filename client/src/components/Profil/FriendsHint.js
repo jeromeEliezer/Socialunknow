@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { isEmpty } from '../Utils';
 import FollowHandler from './FollowHandler';

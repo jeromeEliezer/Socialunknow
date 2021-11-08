@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { getTrends } from '../actions/post.actions';
 import { isEmpty } from './Utils';
 
-const Trends = () => {
+const Trends = (post) => {
     const posts = useSelector((state) => state.allPostsReducer);
     const usersData = useSelector((state) => state.usersReducer);
     const trendList = useSelector((state) => state.trendingReducer);
@@ -40,7 +40,7 @@ const Trends = () => {
                                                 src={post.video}
                                                 frameBorder="0"
                                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media;
-                              gyroscope; picture-in-picture"
+                                                gyroscope; picture-in-picture"
                                                 allowFullScreen
                                                 title={post._id}
                                             ></iframe>
@@ -51,9 +51,9 @@ const Trends = () => {
                                                     return user.picture;
                                                 } else return null;
                                             })
-                                            .join("")
-                                        } alt="profil-pic" />
-                                        ) }
+                                                .join("")
+                                            } alt="profil-pic" />
+                                        )}
                                     </div>
                                     <div className="trend-content">
                                         <p>{post.message}</p>

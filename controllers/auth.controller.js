@@ -32,15 +32,14 @@ module.exports.signIn = async (req, res) => {
 
     try {
         console.log(req.body, 'alll');
-        const user = await UserModel.login({ email, password }); 
-        console.log('user' , user);
+        const user = await UserModel.login( email, password ); 
+        console.log('user' , UserModel.login( email, password ));
         const token = createToken(user._id);
         res.cookie('jwt', token, { httpOnly: true, maxAge });
         res.status(200).json({ user: user._id })
     } catch (err) {
-        console.log(err, 'here');
         const errors = signInErrors(err);
-        res.status(200).send({ errors });
+        res.status(300).send({ errors });
     }
 };
 
