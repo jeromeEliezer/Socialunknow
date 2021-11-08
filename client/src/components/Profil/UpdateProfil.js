@@ -11,6 +11,7 @@ function UpdateProfil() {
     const [updateForm, setUpdateForm] = useState(false);
     const userData = useSelector((state) => state.userReducer);
     const usersData = useSelector((state) => state.usersReducer);
+    const error = useSelector((state) => state.errorReducer.userError);
     const dispatch = useDispatch();
     const [followingPopup, setFollowingPopup] = useState(true);
     const [followersPopup, setFollowersPopup] = useState(true);
@@ -29,6 +30,9 @@ function UpdateProfil() {
                     <h3>Photo de profil</h3>
                     <img src={userData.picture} alt="user-pic" />
                     <UploadImg />
+                    <p>{error.maxSize}</p>
+                    <p>{error.format}</p>
+
                 </div>
                 <div className="right-part">
                     <div className="bio-update">
@@ -74,12 +78,13 @@ function UpdateProfil() {
                                                 <img src={userData.picture} alt="user-pic" />
                                                 <h4>{userData.pseudo}</h4>
                                                 <div className="follow-handler">
-                                                    <FollowHandler idToFollow={user._id} type={'suggestion'}/>
+                                                    <FollowHandler idToFollow={user._id} type={'suggestion'} />
                                                 </div>
                                             </li>
                                         );
                                     }
                                 }
+                                return null;
                             })}
                         </ul>
                     </div>
@@ -102,7 +107,7 @@ function UpdateProfil() {
                                                 <img src={userData.picture} alt="user-pic" />
                                                 <h4>{userData.pseudo}</h4>
                                                 <div className="follow-handler">
-                                                    <FollowHandler idToFollow={user._id} type={'suggestion'}/>
+                                                    <FollowHandler idToFollow={user._id} type={'suggestion'} />
                                                 </div>
                                             </li>
                                         );
